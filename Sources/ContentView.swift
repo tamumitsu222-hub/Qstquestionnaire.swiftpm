@@ -2,8 +2,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Button("OK") {}
-            .buttonStyle(.borderedProminent)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        VStack {
+            Button("OK") {}
+                .buttonStyle(.borderedProminent)
+                .controlSize(.large)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
