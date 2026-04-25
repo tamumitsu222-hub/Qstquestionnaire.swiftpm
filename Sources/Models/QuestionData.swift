@@ -1,0 +1,242 @@
+import Foundation
+
+// MARK: - AAE (60 items)
+
+let aaeItems: [AAEItem] = [
+    .init(id:1,  word:"要領がいい",       valence:.positive, leftLabel:"一番要領がよくない人",     rightLabel:"一番要領がいい人"),
+    .init(id:2,  word:"軽薄な",           valence:.negative, leftLabel:"一番軽薄ではない人",       rightLabel:"一番軽薄な人"),
+    .init(id:3,  word:"ユーモアがない",   valence:.negative, leftLabel:"一番ユーモアがある人",     rightLabel:"一番ユーモアがない人"),
+    .init(id:4,  word:"粘り強い",         valence:.positive, leftLabel:"一番粘り強くない人",       rightLabel:"一番粘り強い人"),
+    .init(id:5,  word:"気まぐれな",       valence:.negative, leftLabel:"一番気まぐれではない人",   rightLabel:"一番気まぐれな人"),
+    .init(id:6,  word:"真面目な",         valence:.positive, leftLabel:"一番真面目ではない人",     rightLabel:"一番真面目な人"),
+    .init(id:7,  word:"凝り性な",         valence:.neutral,  leftLabel:"一番凝り性ではない人",     rightLabel:"一番凝り性な人"),
+    .init(id:8,  word:"想像力に欠ける",   valence:.negative, leftLabel:"一番想像力に富む人",       rightLabel:"一番想像力に欠ける人"),
+    .init(id:9,  word:"思いやりがある",   valence:.positive, leftLabel:"一番思いやりがない人",     rightLabel:"一番思いやりがある人"),
+    .init(id:10, word:"理科系の",         valence:.neutral,  leftLabel:"一番理科系ではない人",     rightLabel:"一番理科系の人"),
+    .init(id:11, word:"謙虚な",           valence:.positive, leftLabel:"一番謙虚ではない人",       rightLabel:"一番謙虚な人"),
+    .init(id:12, word:"浪費家な",         valence:.negative, leftLabel:"一番浪費家ではない人",     rightLabel:"一番浪費家な人"),
+    .init(id:13, word:"冴えない",         valence:.negative, leftLabel:"一番冴えている人",         rightLabel:"一番冴えない人"),
+    .init(id:14, word:"優柔不断な",       valence:.negative, leftLabel:"一番優柔不断ではない人",   rightLabel:"一番優柔不断な人"),
+    .init(id:15, word:"思案にふけやすい", valence:.neutral,  leftLabel:"一番思案にふけない人",     rightLabel:"一番思案にふけやすい人"),
+    .init(id:16, word:"厳格な",           valence:.neutral,  leftLabel:"一番厳格ではない人",       rightLabel:"一番厳格な人"),
+    .init(id:17, word:"存在感が薄い",     valence:.negative, leftLabel:"一番存在感がある人",       rightLabel:"一番存在感が薄い人"),
+    .init(id:18, word:"気さくな",         valence:.positive, leftLabel:"一番気さくでない人",       rightLabel:"一番気さくな人"),
+    .init(id:19, word:"ユーモアがある",   valence:.positive, leftLabel:"一番ユーモアがない人",     rightLabel:"一番ユーモアがある人"),
+    .init(id:20, word:"影響力がある",     valence:.positive, leftLabel:"一番影響力がない人",       rightLabel:"一番影響力がある人"),
+    .init(id:21, word:"冷静な",           valence:.positive, leftLabel:"一番冷静ではない人",       rightLabel:"一番冷静な人"),
+    .init(id:22, word:"気難しい",         valence:.negative, leftLabel:"一番気難しくない人",       rightLabel:"一番気難しい人"),
+    .init(id:23, word:"短気な",           valence:.negative, leftLabel:"一番短気ではない人",       rightLabel:"一番短気な人"),
+    .init(id:24, word:"陽気な",           valence:.positive, leftLabel:"一番陽気ではない人",       rightLabel:"一番陽気な人"),
+    .init(id:25, word:"支配的な",         valence:.negative, leftLabel:"一番支配的ではない人",     rightLabel:"一番支配的な人"),
+    .init(id:26, word:"器用な",           valence:.positive, leftLabel:"一番器用ではない人",       rightLabel:"一番器用な人"),
+    .init(id:27, word:"内気な",           valence:.negative, leftLabel:"一番内気ではない人",       rightLabel:"一番内気な人"),
+    .init(id:28, word:"控え目な",         valence:.neutral,  leftLabel:"一番控え目ではない人",     rightLabel:"一番控え目な人"),
+    .init(id:29, word:"感傷的な",         valence:.negative, leftLabel:"一番感傷的ではない人",     rightLabel:"一番感傷的な人"),
+    .init(id:30, word:"悲観的な",         valence:.negative, leftLabel:"一番悲観的ではない人",     rightLabel:"一番悲観的な人"),
+    .init(id:31, word:"慎重な",           valence:.positive, leftLabel:"一番慎重ではない人",       rightLabel:"一番慎重な人"),
+    .init(id:32, word:"想像力に富む",     valence:.positive, leftLabel:"一番想像力に欠ける人",     rightLabel:"一番想像力に富む人"),
+    .init(id:33, word:"間抜けな",         valence:.negative, leftLabel:"一番間抜けではない人",     rightLabel:"一番間抜けな人"),
+    .init(id:34, word:"うぬぼれ屋な",     valence:.negative, leftLabel:"一番うぬぼれ屋ではない人", rightLabel:"一番うぬぼれ屋な人"),
+    .init(id:35, word:"誠実な",           valence:.positive, leftLabel:"一番誠実ではない人",       rightLabel:"一番誠実な人"),
+    .init(id:36, word:"頼りない",         valence:.negative, leftLabel:"一番頼りになる人",         rightLabel:"一番頼りない人"),
+    .init(id:37, word:"実務家の",         valence:.positive, leftLabel:"一番実務家ではない人",     rightLabel:"一番実務家の人"),
+    .init(id:38, word:"浅薄な",           valence:.negative, leftLabel:"一番浅薄ではない人",       rightLabel:"一番浅薄な人"),
+    .init(id:39, word:"詮索好きな",       valence:.negative, leftLabel:"一番詮索好きではない人",   rightLabel:"一番詮索好きな人"),
+    .init(id:40, word:"頼りになる",       valence:.positive, leftLabel:"一番頼りない人",           rightLabel:"一番頼りになる人"),
+    .init(id:41, word:"大胆な",           valence:.neutral,  leftLabel:"一番大胆ではない人",       rightLabel:"一番大胆な人"),
+    .init(id:42, word:"従順な",           valence:.positive, leftLabel:"一番従順ではない人",       rightLabel:"一番従順な人"),
+    .init(id:43, word:"不正直な",         valence:.negative, leftLabel:"一番不正直ではない人",     rightLabel:"一番不正直な人"),
+    .init(id:44, word:"芸術的な",         valence:.neutral,  leftLabel:"一番芸術的ではない人",     rightLabel:"一番芸術的な人"),
+    .init(id:45, word:"不器用な",         valence:.negative, leftLabel:"一番不器用ではない人",     rightLabel:"一番不器用な人"),
+    .init(id:46, word:"知性がない",       valence:.negative, leftLabel:"一番知性がある人",         rightLabel:"一番知性がない人"),
+    .init(id:47, word:"衝動的な",         valence:.negative, leftLabel:"一番衝動的ではない人",     rightLabel:"一番衝動的な人"),
+    .init(id:48, word:"人に好かれる",     valence:.positive, leftLabel:"一番人に好かれない人",     rightLabel:"一番人に好かれる人"),
+    .init(id:49, word:"正直な",           valence:.positive, leftLabel:"一番正直ではない人",       rightLabel:"一番正直な人"),
+    .init(id:50, word:"勤勉な",           valence:.positive, leftLabel:"一番勤勉ではない人",       rightLabel:"一番勤勉な人"),
+    .init(id:51, word:"果敢な",           valence:.positive, leftLabel:"一番果敢ではない人",       rightLabel:"一番果敢な人"),
+    .init(id:52, word:"社交的な",         valence:.positive, leftLabel:"一番社交的ではない人",     rightLabel:"一番社交的な人"),
+    .init(id:53, word:"陰気な",           valence:.negative, leftLabel:"一番陰気ではない人",       rightLabel:"一番陰気な人"),
+    .init(id:54, word:"単純な",           valence:.neutral,  leftLabel:"一番単純ではない人",       rightLabel:"一番単純な人"),
+    .init(id:55, word:"知的な",           valence:.positive, leftLabel:"一番知的ではない人",       rightLabel:"一番知的な人"),
+    .init(id:56, word:"無責任な",         valence:.negative, leftLabel:"一番無責任ではない人",     rightLabel:"一番無責任な人"),
+    .init(id:57, word:"視野が広い",       valence:.positive, leftLabel:"一番視野が広くない人",     rightLabel:"一番視野が広い人"),
+    .init(id:58, word:"親切な",           valence:.positive, leftLabel:"一番親切ではない人",       rightLabel:"一番親切な人"),
+    .init(id:59, word:"寛大な",           valence:.positive, leftLabel:"一番寛大ではない人",       rightLabel:"一番寛大な人"),
+    .init(id:60, word:"人望がない",       valence:.negative, leftLabel:"一番人望がある人",         rightLabel:"一番人望がない人"),
+]
+
+let aaeSections: [(label: String, valence: AAEValence)] = [
+    ("ポジティブ語", .positive),
+    ("ネガティブ語（逆転）", .negative),
+    ("ニュートラル語", .neutral),
+]
+
+// MARK: - BIS/BAS (20 items)
+
+let bisbasItems: [BISBASItem] = [
+    .init(id:1,  text:"たとえ何かよくないことが私の身に起ころうとしていても、怖くなったり神経質になったりすることはほとんどない", subscale:.BIS,                  reversed:true),
+    .init(id:2,  text:"私は、欲しいものを手に入れるためには格別に努力する",                                                         subscale:.Drive,               reversed:false),
+    .init(id:3,  text:"何かがうまくいっているときは、それを続けることがとても楽しいと思う",                                         subscale:.RewardResponsiveness, reversed:false),
+    .init(id:4,  text:"面白そうだと思えば、私はいつも何か新しいものを試したいと考えている",                                         subscale:.FunSeeking,           reversed:false),
+    .init(id:5,  text:"私は、欲しいものを手にいれたとき、興奮し、活気づけられる",                                                   subscale:.RewardResponsiveness, reversed:false),
+    .init(id:6,  text:"非難されたり怒られたりすると、私はかなり傷つく",                                                             subscale:.BIS,                  reversed:false),
+    .init(id:7,  text:"欲しいものがあると、私はたいていそれを手に入れるために全力を挙げる",                                         subscale:.Drive,               reversed:false),
+    .init(id:8,  text:"楽しいかもしれないから、というだけの理由で何かをすることがよくある",                                         subscale:.FunSeeking,           reversed:false),
+    .init(id:9,  text:"欲しいものを手に入れるチャンスを見つけると、すぐに動き出す",                                                 subscale:.Drive,               reversed:false),
+    .init(id:10, text:"誰かが私のことを怒っていると考えたり、知ったりすると、私はかなり心配になったり動揺したりする",               subscale:.BIS,                  reversed:false),
+    .init(id:11, text:"何か好きなことをするチャンスをみつけると、私はすぐに興奮する",                                               subscale:.RewardResponsiveness, reversed:false),
+    .init(id:12, text:"私はしばしば時のはずみで行動する",                                                                           subscale:.FunSeeking,           reversed:false),
+    .init(id:13, text:"何かよくないことが起ころうとしていると考えると、私はたいていくよくよ悩む",                                   subscale:.BIS,                  reversed:false),
+    .init(id:14, text:"よいことが私の身に起こると、そのことは、私に強い影響を与える",                                               subscale:.RewardResponsiveness, reversed:false),
+    .init(id:15, text:"何か重要なことをあまりうまくできなかったと考えると不安になる",                                               subscale:.BIS,                  reversed:false),
+    .init(id:16, text:"私は、興奮や新しい刺激を切望している",                                                                       subscale:.FunSeeking,           reversed:false),
+    .init(id:17, text:"私は、何かを追い求めているときには徹底的にやる",                                                             subscale:.Drive,               reversed:false),
+    .init(id:18, text:"私は、友達と比べると不安の種はとても少ない",                                                                 subscale:.BIS,                  reversed:true),
+    .init(id:19, text:"競争に勝ったら、私は興奮するだろう",                                                                         subscale:.RewardResponsiveness, reversed:false),
+    .init(id:20, text:"私は、間違いを犯すことを心配している",                                                                       subscale:.BIS,                  reversed:false),
+]
+
+let bisbasSections: [BISBASSection] = [
+    .init(label:"BIS　行動抑制システム",  itemIDs:[1,6,10,13,15,18,20]),
+    .init(label:"BAS-Drive　駆動",        itemIDs:[2,7,9,17]),
+    .init(label:"BAS-Fun Seeking　刺激探求", itemIDs:[4,8,12,16]),
+    .init(label:"BAS-報酬反応性",         itemIDs:[3,5,11,14,19]),
+]
+
+// MARK: - FOG-Q (6 items)
+
+let fogqItems: [FOGQItem] = [
+    .init(id:1, text:"あなたの歩行が最も悪いとき、あなたの歩行はどのようですか？",
+          options:["普通に歩行できる","ほぼ普通に歩けるが、少しだけ遅い","歩きは遅いが、介助はまったくいらない","歩行に介助または補助具がいる","歩けない"]),
+    .init(id:2, text:"あなたの歩行障害はあなたの日常生活を思い通りに過ごすための妨げになっていますか？",
+          options:["まったく妨げになっていない","少しなっている","かなりなっている","非常になっている","歩けない"]),
+    .init(id:3, text:"歩くとき足が「すくみ」で踏み出せなくなることがありますか？",
+          options:["ない","非常にまれにある（1ヶ月に1回か）","ときどきある（1週間に1回か）","しばしばある（1日に1回か）","いつもある（歩く時は必ずある）"]),
+    .init(id:4, text:"「すくみ足」から抜け出すのに何秒かかりますか？",
+          options:["すくみ足はない","1〜2秒","3〜10秒","11〜30秒","30秒以上かかって歩けない"]),
+    .init(id:5, text:"歩き始めの一歩が出ないとき、抜け出すのにどのくらいかかりますか？",
+          options:["すくみ足はない","歩き始めに1秒以上かかる","歩き始めに3秒以上かかる","歩き始めに10秒以上かかる","歩き始めに30秒以上かかる"]),
+    .init(id:6, text:"方向転換で「すくみ足」が出たとき抜け出すのに何秒かかりますか？",
+          options:["すくみ足はない","1〜2秒","3〜10秒","11〜30秒","30秒以上かかってもターンできない"]),
+]
+
+// MARK: - HAMD-17
+
+let hamdItems: [HAMDItem] = [
+    .init(id:1,  name:"抑うつ気分",         note:"悲しみ、希望のなさ、無力感、自己無価値感", type:.grid,
+          severityOptions:["なし","軽度（悲しいが苦にならない）","中等度（気分が落ちている）","重度（ひどく落ち込んでいる）","最重度（極めて強い絶望感）"],
+          grid:[[0,0,0,0],[0,1,1,2],[1,2,3,3],[2,3,4,4],[3,4,4,4]], soloScores:nil),
+    .init(id:2,  name:"罪責感",             note:"自分を責める、罰せられるべきと感じる", type:.grid,
+          severityOptions:["なし","軽度（自分を責める）","中等度（罪を犯したと感じる）","重度（病気は罰だと感じる）","最重度（罪悪妄想）"],
+          grid:[[0,0,0,0],[0,1,1,2],[0,1,2,3],[2,3,4,4],[4,4,4,4]], soloScores:nil),
+    .init(id:3,  name:"自殺念慮",           note:"死にたい気持ち、自傷念慮", type:.grid,
+          severityOptions:["なし","軽度（生きていたくない）","中等度（死にたいと思う）","重度（自殺の考えや計画）","最重度（自殺企図）"],
+          grid:[[0,0,0,0],[0,1,1,2],[1,2,3,3],[3,3,4,4],[4,4,4,4]], soloScores:nil),
+    .init(id:4,  name:"入眠困難",           note:"寝つきの悪さ", type:.grid,
+          severityOptions:["なし","軽度（たまに寝つきが悪い）","重度（毎晩寝つけない）"],
+          grid:[[0,0,0,0],[0,1,1,2],[1,2,2,2]], soloScores:nil),
+    .init(id:5,  name:"中途覚醒",           note:"夜中に目が覚める", type:.grid,
+          severityOptions:["なし","軽度（浅い眠り）","重度（夜中に起きて床を離れる）"],
+          grid:[[0,0,0,0],[0,1,1,2],[1,2,2,2]], soloScores:nil),
+    .init(id:6,  name:"早朝覚醒",           note:"朝早く目が覚める", type:.grid,
+          severityOptions:["なし","軽度（少し早く目が覚める）","重度（2時間以上早く眠れない）"],
+          grid:[[0,0,0,0],[0,1,1,2],[1,2,2,2]], soloScores:nil),
+    .init(id:7,  name:"仕事と活動",         note:"意欲や能力の低下", type:.grid,
+          severityOptions:["なし","軽度（疲れやすい）","中等度（活動量が減った）","重度（仕事ができない）","最重度（何もできない）"],
+          grid:[[0,0,0,0],[0,1,1,2],[1,2,3,3],[2,3,4,4],[3,4,4,4]], soloScores:nil),
+    .init(id:8,  name:"精神運動制止",       note:"動作・思考の遅れ", type:.solo,
+          severityOptions:["なし","軽度","中等度","重度","最重度"], grid:nil, soloScores:[0,1,2,3,4]),
+    .init(id:9,  name:"精神運動激越",       note:"焦燥感・落ち着きのなさ", type:.solo,
+          severityOptions:["なし","軽度","中等度","重度","最重度"], grid:nil, soloScores:[0,1,2,3,4]),
+    .init(id:10, name:"不安（精神症状）",   note:"緊張、イライラ、心配", type:.grid,
+          severityOptions:["なし","軽度","中等度","重度","最重度"],
+          grid:[[0,0,0,0],[0,1,1,2],[1,2,3,3],[2,3,4,4],[3,4,4,4]], soloScores:nil),
+    .init(id:11, name:"不安（身体症状）",   note:"動悸、頭痛、発汗など", type:.grid,
+          severityOptions:["なし","軽度","中等度","重度","最重度"],
+          grid:[[0,0,0,0],[0,1,1,2],[1,2,3,3],[2,3,4,4],[3,4,4,4]], soloScores:nil),
+    .init(id:12, name:"食思不振",           note:"食欲の低下", type:.grid,
+          severityOptions:["なし","軽度（食欲がやや落ちた）","重度（ほとんど食べられない）"],
+          grid:[[0,0,0,0],[0,1,1,1],[1,2,2,2]], soloScores:nil),
+    .init(id:13, name:"全身の身体症状",     note:"倦怠感・重さ", type:.grid,
+          severityOptions:["なし","軽度（疲れやすい）","重度（強い倦怠感）"],
+          grid:[[0,0,0,0],[0,1,1,1],[1,2,2,2]], soloScores:nil),
+    .init(id:14, name:"性的関心の低下",     note:"", type:.solo,
+          severityOptions:["なし","軽度","重度"], grid:nil, soloScores:[0,1,2]),
+    .init(id:15, name:"心気症",             note:"身体への過度な心配", type:.grid,
+          severityOptions:["なし","軽度","中等度","重度","最重度（妄想的確信）"],
+          grid:[[0,0,0,0],[0,1,1,2],[1,2,3,3],[2,3,3,3],[4,4,4,4]], soloScores:nil),
+    .init(id:16, name:"体重減少",           note:"", type:.solo,
+          severityOptions:["体重減少なし","おそらくあり（0.5〜1kg未満/週）","明らかにあり（1kg以上/週）"],
+          grid:nil, soloScores:[0,1,2]),
+    .init(id:17, name:"病識",               note:"病気についての認識", type:.solo,
+          severityOptions:["病気だとわかっている","確信が持てない","病気ではないと思っている"],
+          grid:nil, soloScores:[0,1,2]),
+]
+
+// MARK: - MFES (14 items)
+
+let mfesItems: [String] = [
+    "衣服の着脱を行う",
+    "食事の準備（調理・配膳）をする",
+    "風呂に入る",
+    "椅子に掛ける・椅子から立ち上がる",
+    "布団に入る、布団から起き上がる",
+    "来客（玄関・ドア）や電話に応じる",
+    "家の中の廊下や畳を歩き回る",
+    "戸棚やタンス・物置の所まで行く",
+    "軽い家事を行う",
+    "軽い買い物を行う",
+    "バスや電車を利用する",
+    "道路（横断歩道）を渡る",
+    "庭いじりをする、又は洗濯物を干す",
+    "玄関や勝手口に段差を越す",
+]
+
+// MARK: - mGES (10 items)
+
+let mgesItems: [String] = [
+    "床板のような固い平面を安全に歩ける自信はどのくらいありますか？",
+    "芝生の上を安全に歩ける自信はどのくらいありますか？",
+    "通路の障害物を安全に越えて歩ける自信はどのくらいありますか？",
+    "縁石から安全に降りられる自信はどのくらいありますか？",
+    "縁石の上に安全に上がれる自信はどのくらいありますか？",
+    "手すりにつかまって階段を安全に昇れる自信はどのくらいありますか？",
+    "手すりにつかまって階段を安全に降りられる自信はどのくらいありますか？",
+    "手すりにつかまらずに階段を安全に昇れる自信はどのくらいありますか？",
+    "手すりにつかまらずに階段を安全に降りられる自信はどのくらいありますか？",
+    "800mくらいの長距離を安全に歩ける自信はどのくらいありますか？",
+]
+
+// MARK: - PDSS-2 (15 items)
+
+let pdss2Items: [PDSS2Item] = [
+    .init(id:1,  text:"先週、よく眠れましたか？",                                                 reversed:true),
+    .init(id:2,  text:"夜、寝つきの悪い日がありましたか？",                                       reversed:false),
+    .init(id:3,  text:"夜中に目が覚めることがありましたか？",                                     reversed:false),
+    .init(id:4,  text:"夜、睡眠を妨げる腕や脚の落ち着かない不快な感じはありましたか？",           reversed:false),
+    .init(id:5,  text:"夜中に手足を動かしたくて眠れないことがありましたか？",                     reversed:false),
+    .init(id:6,  text:"夜中に不快な夢で悩まされることがありましたか？",                           reversed:false),
+    .init(id:7,  text:"夜中に幻覚があって困ることはありましたか？",                               reversed:false),
+    .init(id:8,  text:"夜トイレに起きましたか？",                                                 reversed:false),
+    .init(id:9,  text:"夜中に寝返りや動くことができなくて寝苦しいことがありましたか？",           reversed:false),
+    .init(id:10, text:"夜中に手足が痛くなり目が覚めることがありましたか？",                       reversed:false),
+    .init(id:11, text:"夜中に手足の筋肉が引きつって目が覚めることがありましたか？",               reversed:false),
+    .init(id:12, text:"寝ていて手足が動かず、痛くて、朝早く目が覚めることがありましたか？",       reversed:false),
+    .init(id:13, text:"目が覚めたとき手足が震えることがありましたか？",                           reversed:false),
+    .init(id:14, text:"朝、目が覚めた後も疲れと眠気がありましたか？",                             reversed:false),
+    .init(id:15, text:"夜中にいびきや息苦しさのために目が覚めることがありましたか？",             reversed:false),
+]
+
+// MARK: - WOQ-9 (9 items)
+
+let woq9Symptoms: [String] = [
+    "ふるえる",
+    "動作が遅くなる",
+    "気分が変化する、または落ち込む",
+    "体のどこかがこわばる",
+    "するどい痛み、または長く続くにぶい痛み（鈍痛）がある",
+    "手先の細かい作業がうまくできない",
+    "思考がまとまらない、または頭の回転が遅い",
+    "不安になる、またはパニック状態になる",
+    "筋肉がひきつる",
+]
