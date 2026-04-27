@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct PDSS2View: View {
-    @Environment(AppState.self) private var state
+    @EnvironmentObject var state: AppState
 
     var body: some View {
         NavigationStack {
@@ -32,7 +32,7 @@ struct PDSS2View: View {
 }
 
 private struct PDSS2ItemCard: View {
-    @Environment(AppState.self) private var state
+    @EnvironmentObject var state: AppState
     let item: PDSS2Item
 
     var isDone: Bool { state.pdss2Answers[item.id] != nil }

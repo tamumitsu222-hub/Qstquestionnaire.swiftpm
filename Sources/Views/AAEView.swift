@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AAEView: View {
-    @Environment(AppState.self) private var state
+    @EnvironmentObject var state: AppState
 
     var body: some View {
         NavigationStack {
@@ -35,7 +35,7 @@ struct AAEView: View {
 }
 
 private struct AAEItemCard: View {
-    @Environment(AppState.self) private var state
+    @EnvironmentObject var state: AppState
     let item: AAEItem
 
     var isDone: Bool { state.aaeTouched.contains(item.id) }

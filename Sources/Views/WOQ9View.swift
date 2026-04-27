@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct WOQ9View: View {
-    @Environment(AppState.self) private var state
+    @EnvironmentObject var state: AppState
 
     var body: some View {
         NavigationStack {
@@ -32,7 +32,7 @@ struct WOQ9View: View {
 }
 
 private struct WOQ9ItemCard: View {
-    @Environment(AppState.self) private var state
+    @EnvironmentObject var state: AppState
     let id: Int
     let symptom: String
 

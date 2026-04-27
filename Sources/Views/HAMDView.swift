@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct HAMDView: View {
-    @Environment(AppState.self) private var state
+    @EnvironmentObject var state: AppState
 
     var body: some View {
         NavigationStack {
@@ -32,7 +32,7 @@ struct HAMDView: View {
 }
 
 private struct HAMDItemCard: View {
-    @Environment(AppState.self) private var state
+    @EnvironmentObject var state: AppState
     let item: HAMDItem
 
     var isDone: Bool { state.hamdScore[item.id] != nil }

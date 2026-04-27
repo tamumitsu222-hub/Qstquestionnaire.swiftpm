@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(AppState.self) private var state
+    @EnvironmentObject var state: AppState
 
     var body: some View {
         TabView {

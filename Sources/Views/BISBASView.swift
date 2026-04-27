@@ -3,7 +3,7 @@ import SwiftUI
 private let bbOptions = ["あてはまらない", "ややあてはまらない", "ややあてはまる", "あてはまる"]
 
 struct BISBASView: View {
-    @Environment(AppState.self) private var state
+    @EnvironmentObject var state: AppState
 
     var body: some View {
         NavigationStack {
@@ -39,7 +39,7 @@ struct BISBASView: View {
 }
 
 private struct BISBASItemCard: View {
-    @Environment(AppState.self) private var state
+    @EnvironmentObject var state: AppState
     let item: BISBASItem
 
     var isDone: Bool { state.bisbasAnswers[item.id] != nil }

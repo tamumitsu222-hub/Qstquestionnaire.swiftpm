@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct FOGQView: View {
-    @Environment(AppState.self) private var state
+    @EnvironmentObject var state: AppState
 
     var body: some View {
         NavigationStack {
@@ -32,7 +32,7 @@ struct FOGQView: View {
 }
 
 private struct FOGQItemCard: View {
-    @Environment(AppState.self) private var state
+    @EnvironmentObject var state: AppState
     let item: FOGQItem
 
     var isDone: Bool { state.fogqAnswers[item.id] != nil }

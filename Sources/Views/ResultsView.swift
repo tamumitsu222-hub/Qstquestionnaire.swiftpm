@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ResultsView: View {
-    @Environment(AppState.self) private var state
+    @EnvironmentObject var state: AppState
 
     var body: some View {
         NavigationStack {
@@ -109,7 +109,7 @@ PDSS-2: Suzuki et al. (2012)  |  WOQ-9: 関 守信 監修
 // MARK: - Metadata Card
 
 private struct MetadataCard: View {
-    @Environment(AppState.self) private var state
+    @EnvironmentObject var state: AppState
 
     var body: some View {
         HStack(spacing: 16) {
@@ -117,22 +117,16 @@ private struct MetadataCard: View {
                 Image(systemName: "person.fill")
                     .foregroundStyle(.secondary)
                     .frame(width: 20)
-                TextField("被験者ID", text: Binding(
-                    get: { state.participantID },
-                    set: { state.participantID = $0 }
-                ))
-                .textFieldStyle(.roundedBorder)
-                .frame(maxWidth: 180)
+                TextField("被験者ID", text: $state.participantID)
+                    .textFieldStyle(.roundedBorder)
+                    .frame(maxWidth: 180)
             }
             HStack(spacing: 8) {
                 Image(systemName: "calendar")
                     .foregroundStyle(.secondary)
                     .frame(width: 20)
-                DatePicker("", selection: Binding(
-                    get: { state.evaluationDate },
-                    set: { state.evaluationDate = $0 }
-                ), displayedComponents: .date)
-                .labelsHidden()
+                DatePicker("", selection: $state.evaluationDate, displayedComponents: .date)
+                    .labelsHidden()
             }
             Spacer()
         }

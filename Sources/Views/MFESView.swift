@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MFESView: View {
-    @Environment(AppState.self) private var state
+    @EnvironmentObject var state: AppState
 
     var body: some View {
         NavigationStack {
