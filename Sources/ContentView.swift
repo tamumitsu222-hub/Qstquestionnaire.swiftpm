@@ -5,34 +5,24 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
-            Tab("AAE", systemImage: "slider.horizontal.3") {
-                AAEView()
-            }
-            Tab("BIS/BAS", systemImage: "brain.head.profile") {
-                BISBASView()
-            }
-            Tab("FOG-Q", systemImage: "figure.walk") {
-                FOGQView()
-            }
-            Tab("HAMD-17", systemImage: "heart.text.clipboard") {
-                HAMDView()
-            }
-            Tab("MFES", systemImage: "figure.stand") {
-                MFESView()
-            }
-            Tab("mGES", systemImage: "figure.stairs") {
-                MGESView()
-            }
-            Tab("PDSS-2", systemImage: "moon.zzz") {
-                PDSS2View()
-            }
-            Tab("WOQ-9", systemImage: "clock.arrow.2.circlepath") {
-                WOQ9View()
-            }
-            Tab("結果・出力", systemImage: "chart.bar.doc.horizontal") {
-                ResultsView()
-            }
+            AAEView()
+                .tabItem { Label("AAE", systemImage: "slider.horizontal.3") }
+            BISBASView()
+                .tabItem { Label("BIS/BAS", systemImage: "brain") }
+            FOGQView()
+                .tabItem { Label("FOG-Q", systemImage: "figure.walk") }
+            HAMDView()
+                .tabItem { Label("HAMD-17", systemImage: "list.clipboard") }
+            MFESView()
+                .tabItem { Label("MFES", systemImage: "figure.stand") }
+            MGESView()
+                .tabItem { Label("mGES", systemImage: "arrow.up.forward.circle") }
+            PDSS2View()
+                .tabItem { Label("PDSS-2", systemImage: "moon.zzz") }
+            WOQ9View()
+                .tabItem { Label("WOQ-9", systemImage: "clock.arrow.circlepath") }
+            ResultsView()
+                .tabItem { Label("結果・出力", systemImage: "chart.bar.doc.horizontal") }
         }
-        .tabViewStyle(.sidebarAdaptable)
     }
 }

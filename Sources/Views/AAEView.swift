@@ -4,7 +4,6 @@ struct AAEView: View {
     @Environment(AppState.self) private var state
 
     var body: some View {
-        @Bindable var s = state
         NavigationStack {
             ScrollView {
                 LazyVStack(spacing: 12, pinnedViews: []) {
@@ -42,7 +41,6 @@ private struct AAEItemCard: View {
     var isDone: Bool { state.aaeTouched.contains(item.id) }
 
     var body: some View {
-        @Bindable var s = state
         QuestionCard(number: item.id, title: item.word, isDone: isDone) {
             VStack(spacing: 6) {
                 HStack {

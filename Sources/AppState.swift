@@ -160,8 +160,10 @@ class AppState {
             let sc  = raw.map { item.reversed ? (5-$0) : $0 }.map(String.init) ?? ""
             let sub: String
             switch item.subscale {
-            case .BIS: sub="BIS"; case .Drive: sub="Drive"
-            case .FunSeeking: sub="FS"; case .RewardResponsiveness: sub="RR"
+            case .BIS:                  sub = "BIS"
+            case .Drive:               sub = "Drive"
+            case .FunSeeking:          sub = "FS"
+            case .RewardResponsiveness: sub = "RR"
             }
             L.append("\(item.id),\(sub),\(item.reversed ? "○":""),\(rawS),\(sc)")
         }

@@ -112,22 +112,27 @@ private struct MetadataCard: View {
     @Environment(AppState.self) private var state
 
     var body: some View {
-        @Bindable var s = state
         HStack(spacing: 16) {
             HStack(spacing: 8) {
                 Image(systemName: "person.fill")
                     .foregroundStyle(.secondary)
                     .frame(width: 20)
-                TextField("被験者ID", text: $s.participantID)
-                    .textFieldStyle(.roundedBorder)
-                    .frame(maxWidth: 180)
+                TextField("被験者ID", text: Binding(
+                    get: { state.participantID },
+                    set: { state.participantID = $0 }
+                ))
+                .textFieldStyle(.roundedBorder)
+                .frame(maxWidth: 180)
             }
             HStack(spacing: 8) {
                 Image(systemName: "calendar")
                     .foregroundStyle(.secondary)
                     .frame(width: 20)
-                DatePicker("", selection: $s.evaluationDate, displayedComponents: .date)
-                    .labelsHidden()
+                DatePicker("", selection: Binding(
+                    get: { state.evaluationDate },
+                    set: { state.evaluationDate = $0 }
+                ), displayedComponents: .date)
+                .labelsHidden()
             }
             Spacer()
         }
