@@ -22,7 +22,7 @@ struct SectionHeader: View {
                 .clipShape(Capsule())
 
             Text(title)
-                .font(.system(.title3, design: .serif, weight: .semibold))
+                .font(.system(size: 18, weight: .semibold, design: .serif))
                 .multilineTextAlignment(.center)
 
             Text(description)

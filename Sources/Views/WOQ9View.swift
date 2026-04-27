@@ -4,7 +4,7 @@ struct WOQ9View: View {
     @EnvironmentObject var state: AppState
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ScrollView {
                 LazyVStack(spacing: 12) {
                     SectionHeader(
@@ -27,6 +27,7 @@ struct WOQ9View: View {
             .background(Color(.systemGroupedBackground))
             .navigationTitle("WOQ-9")
             .navigationBarTitleDisplayMode(.inline)
+        .navigationViewStyle(.stack)
         }
     }
 }

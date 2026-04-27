@@ -6,7 +6,7 @@ struct BISBASView: View {
     @EnvironmentObject var state: AppState
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ScrollView {
                 LazyVStack(spacing: 12) {
                     SectionHeader(
@@ -34,6 +34,7 @@ struct BISBASView: View {
             .background(Color(.systemGroupedBackground))
             .navigationTitle("BIS/BAS")
             .navigationBarTitleDisplayMode(.inline)
+        .navigationViewStyle(.stack)
         }
     }
 }

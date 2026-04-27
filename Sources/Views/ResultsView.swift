@@ -4,7 +4,7 @@ struct ResultsView: View {
     @EnvironmentObject var state: AppState
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ScrollView {
                 LazyVStack(spacing: 16) {
                     // Metadata input
@@ -102,6 +102,7 @@ PDSS-2: Suzuki et al. (2012)  |  WOQ-9: 関 守信 監修
             .background(Color(.systemGroupedBackground))
             .navigationTitle("結果・出力")
             .navigationBarTitleDisplayMode(.inline)
+        .navigationViewStyle(.stack)
         }
     }
 }
@@ -175,7 +176,7 @@ private struct ScoreRow: View {
                 .foregroundStyle(.secondary)
             Spacer()
             Text(value)
-                .font(.system(.title3, design: .serif, weight: .semibold))
+                .font(.system(size: 20, weight: .semibold, design: .serif))
                 .foregroundStyle(.indigo)
             Text("/ \(maxVal)")
                 .font(.system(size: 11))

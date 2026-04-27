@@ -4,7 +4,7 @@ struct MGESView: View {
     @EnvironmentObject var state: AppState
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ScrollView {
                 LazyVStack(spacing: 12) {
                     SectionHeader(
@@ -41,6 +41,7 @@ struct MGESView: View {
             .background(Color(.systemGroupedBackground))
             .navigationTitle("mGES")
             .navigationBarTitleDisplayMode(.inline)
+        .navigationViewStyle(.stack)
         }
     }
 }

@@ -4,7 +4,7 @@ struct AAEView: View {
     @EnvironmentObject var state: AppState
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ScrollView {
                 LazyVStack(spacing: 12, pinnedViews: []) {
                     SectionHeader(
@@ -30,6 +30,7 @@ struct AAEView: View {
             .background(Color(.systemGroupedBackground))
             .navigationTitle("AAE 尺度")
             .navigationBarTitleDisplayMode(.inline)
+        .navigationViewStyle(.stack)
         }
     }
 }

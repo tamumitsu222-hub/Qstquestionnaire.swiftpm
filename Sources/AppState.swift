@@ -6,7 +6,11 @@ class AppState: ObservableObject {
     @Published var evaluationDate: Date = Date()
 
     // MARK: - AAE (VAS 0-100, default 50)
-    @Published var aaeValues: [Int: Double] = (1...60).reduce(into: [:]) { $0[$1] = 50.0 }
+    @Published var aaeValues: [Int: Double] = {
+        var d = [Int: Double]()
+        for i in 1...60 { d[i] = 50.0 }
+        return d
+    }()
     @Published var aaeTouched: Set<Int> = []
 
     // MARK: - BIS/BAS (1-4)
